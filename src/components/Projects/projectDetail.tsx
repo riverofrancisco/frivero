@@ -96,10 +96,10 @@ export default function ProjectDetail({ project, currentLanguage }: Props) {
               flexWrap="wrap"
               sx={{ py: 1 }}
             >
-              {project.tech[currentLanguage].map((tech: SortableItem) => {
+              {project.tech[currentLanguage].map((tech: SortableItem, index: number) => {
                 return (
                   <Chip
-                    key={`Detail${tech.id}`}
+                    key={`Detail${tech.id}${project.id}${currentLanguage}`}
                     label={tech.name}
                     size="small"
                     sx={{ m: 0.5 }}

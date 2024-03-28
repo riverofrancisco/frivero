@@ -62,7 +62,7 @@ const ProyectCard = ({ project, currentLanguage, refresh }: Props) => {
         mb: { xs: 5, sm: 1 },
       }}
     >
-      <Grid item xs={12} sx={{}}>
+      <Grid item xs={12} >
         <Box onClick={() => handleLink(project.link)}>
           <img
             src={project.image}

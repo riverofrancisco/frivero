@@ -115,6 +115,11 @@ const LoginForm: React.FC = () => {
     console.log(currentData);
   };
 
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Enter") {
+      handleSubmit(event);
+    }}
+
   React.useEffect(() => {
     if (open) {
       setCurrentData({
@@ -189,6 +194,7 @@ const LoginForm: React.FC = () => {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onKeyPress={handleKeyPress}
               />
             </Box>
           </DialogContent>

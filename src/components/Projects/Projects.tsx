@@ -35,6 +35,7 @@ const ProyectsList = () => {
   React.useEffect(() => {
     getData();
     getLanguage();
+    console.log(allProjects.map(project => project.id))
   }, [currentLanguage]);
 
   return (
@@ -84,10 +85,10 @@ const ProyectsList = () => {
       >
         <Box display="flex" flexWrap="wrap" justifyContent="space-around">
           {allProjects.length > 0 ? (
-            allProjects.map((project: any, index) => {
+            allProjects.map((project: any, index: number) => {
               return (
                 <ProyectCard
-                  key={`${project.id}CARD${index}`}
+                  key={`${project.id}`}
                   project={project}
                   currentLanguage={currentLanguage}
                   refresh={getData}

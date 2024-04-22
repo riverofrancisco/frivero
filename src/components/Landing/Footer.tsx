@@ -14,6 +14,7 @@ import Stack from "@mui/material/Stack";
 import EmailIcon from "@mui/icons-material/Email";
 import LOGO from "../Nav/LOGOnavbar.png";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
+import DescriptionIcon from '@mui/icons-material/Description';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const actions = [
@@ -38,10 +39,10 @@ const actions = [
     linkto: "mailto:franciscojose.rivero.ar@gmail.com",
   },
   {
-    icon: <CloudDownloadIcon />,
+    icon: <DescriptionIcon />,
     name: "Resume",
     linkto:
-      "https://drive.google.com/file/d/1IZE5_PiTIhbCTplWN5SwTuhGHwvScKax/view?usp=sharing",
+      "https://drive.google.com/file/d/1_bXi_ABg5Uy1yKdoZTXetTf_gQ-_LVKG/view?usp=sharing",
   },
 ];
 

@@ -9,6 +9,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import SendIcon from "@mui/icons-material/Send";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
+import DescriptionIcon from '@mui/icons-material/Description';
 import { Link } from "@mui/material";
 
 
@@ -43,9 +44,9 @@ const actions = [
     linkto: "mailto:franciscojose.rivero.ar@gmail.com",
   },
   {
-    icon: <CloudDownloadIcon />,
+    icon: <DescriptionIcon />,
     name: "Resume",
-    linkto: "https://drive.google.com/file/d/1IZE5_PiTIhbCTplWN5SwTuhGHwvScKax/view?usp=sharing",
+    linkto: "https://drive.google.com/file/d/1_bXi_ABg5Uy1yKdoZTXetTf_gQ-_LVKG/view?usp=sharing",
   },
 ];
 

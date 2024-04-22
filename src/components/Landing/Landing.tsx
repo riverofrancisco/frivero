@@ -1,21 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import { Typography } from "@mui/material/";
-import Fab from "@mui/material/Fab";
-import { Box } from "@mui/system";
-import Grid from "@mui/material/Grid";
-import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
+import React, { useState, useEffect, useRef } from "react";
+import {
+  Typography,
+  Box,
+  Paper,
+  Grid,
+  Button,
+  Avatar,
+  IconButton,
+  Tooltip,
+} from "@mui/material/";
 
 import { useAppDispatch, useAppSelector } from "../../hooks/hooksRedux";
-import { Adder } from "../../redux/portfolio/actions";
-import Button from "@mui/material/Button";
 import { ProfileIMG } from "../../data/data";
-import Avatar from "@mui/material/Avatar";
-import SocialMediaSpeedDial from "../Actions/Contact/LandingAnimation";
-
-import TitleAnimated from "./Title/Title";
-import Title from "./Title/Title";
 import MediaContact from "../Actions/Contact/MediaContact";
+import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
+import DescriptionIcon from "@mui/icons-material/Description";
 
 const LandingPage: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -23,6 +22,31 @@ const LandingPage: React.FC = () => {
   const currentLanguage = useAppSelector((state) => state.global.language);
   const mode = useAppSelector((state) => state.global.mode);
   const [id, setId] = useState("Home");
+
+  //copyEmail
+  const [open, setOpen] = React.useState(false);
+
+  const emailRef = useRef<HTMLInputElement>(null);
+
+  const handleCopyClick = () => {
+    if (emailRef.current) {
+      const range = document.createRange();
+      range.selectNode(emailRef.current);
+      window.getSelection()?.removeAllRanges();
+      window.getSelection()?.addRange(range);
+      document.execCommand("copy");
+      window.getSelection()?.removeAllRanges();
+    }
+    setOpen(true);
+
+    setTimeout(() => {
+      setOpen(false);
+    }, 1000);
+  };
+  //linkto
+  const handleLink = (link: string) => {
+    if (link) window.open(link, "_blank");
+  };
 
   const [isVisible, setIsVisible] = useState(true);
   const [opacity, setOpacity] = useState("100%");
@@ -109,9 +133,46 @@ const LandingPage: React.FC = () => {
                 : "Desarrollador Web Full Stack"}
             </Typography>
 
-            <Box p={2} alignSelf="start" width="100%">
-              <SocialMediaSpeedDial />
-            </Box>
+            <Paper
+              sx={{
+                py: 1,
+                px: {xs:1, md:2},
+                m: 1,
+                borderRadius: 2,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+              }}
+            >
+              <Typography  >
+                <span ref={emailRef}>
+                  franciscojose.rivero.ar@gmail.com
+                </span>
+              </Typography>
+              <Tooltip open={open} placement="bottom-start" title="Copied">
+                <IconButton
+                  sx={{
+                    size: "small",
+                  }}
+                  onClick={handleCopyClick}
+                >
+                  <ContentCopyRoundedIcon />
+                </IconButton>
+              </Tooltip>
+              <IconButton
+                sx={{
+                  size: "small",
+                  display:{xs: "none", sm: "flex"}
+                }}
+                onClick={() =>
+                  handleLink(
+                    "https://drive.google.com/file/d/1_bXi_ABg5Uy1yKdoZTXetTf_gQ-_LVKG/view?usp=sharing"
+                  )
+                }
+              >
+                <DescriptionIcon />
+              </IconButton>
+            </Paper>
           </Box>
         </Box>
       </Grid>
@@ -126,7 +187,7 @@ const LandingPage: React.FC = () => {
         justifyContent="center"
       >
         <Box
-          width="50%"
+          
           display="flex"
           flexDirection="column"
           alignItems="center"
@@ -136,6 +197,7 @@ const LandingPage: React.FC = () => {
           borderColor="white"
           boxShadow={2}
           sx={{
+            width:{xs:"65%", sm: "45%", md:"50%"},
             "&:hover": {
               boxShadow: 6,
             },

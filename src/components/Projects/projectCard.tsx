@@ -84,13 +84,13 @@ const ProyectCard = ({ project, currentLanguage, refresh }: Props) => {
           }}
         >
           <Grid item sx={{ display: "flex" }}>
-            <IconButton
+            {project.video && <IconButton
               size="small"
               sx={{ m: 0.5 }}
               onClick={() => handleLink(project.video)}
             >
               <YouTubeIcon />
-            </IconButton>
+            </IconButton>}
             <IconButton
               size="small"
               sx={{ m: 0.5 }}

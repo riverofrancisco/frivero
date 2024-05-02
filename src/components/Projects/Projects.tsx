@@ -35,7 +35,7 @@ const ProyectsList = () => {
   React.useEffect(() => {
     getData();
     getLanguage();
-    console.log(allProjects.map(project => project.id))
+    console.log("Proyects loaded");
   }, [currentLanguage]);
 
   return (

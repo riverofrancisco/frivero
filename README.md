@@ -34,4 +34,4 @@
 ---
 
 > [!TIP]
-> Link a la App: [Deployment](https://frivero.com.ar/)
+> Link a la App: [frivero.com.ar](https://frivero.com.ar/)

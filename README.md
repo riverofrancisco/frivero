@@ -2,18 +2,28 @@
 
 ## Inicialización de la Aplicación
 
-Para comenzar a trabajar con esta aplicación, sigue los siguientes pasos:
+> Para comenzar a trabajar con esta aplicación, sigue los siguientes pasos:
 
-1. Abre la terminal o línea de comandos.
+1. Clona el repositorio.
 
-2. Instala las dependencias necesarias utilizando npm. Ejecuta el siguiente comando:
+   ```sh
+   git clone https://github.com/riverofrancisco/frivero
 
+   ```
+
+2. Instala las dependencias necesarias utilizando npm. Ejecuta el siguiente comando
    ```sh
    npm install
 
    ```
+3. Compila el código Typescript
 
-3. Una vez que la instalación de las dependencias haya finalizado con éxito, puedes iniciar la aplicación localmente. Usa el siguiente comando:
+   ```sh
+   npm run build
+
+   ```
+
+4. Una vez que la instalación de las dependencias haya finalizado con éxito, puedes iniciar la aplicación localmente. Usa el siguiente comando:
 
    ```sh
    npm start
@@ -23,4 +33,4 @@ Para comenzar a trabajar con esta aplicación, sigue los siguientes pasos:
 
 ---
 
-Link a la App: [Deployment](https://frivero.com.ar/)
+>[!Info] Link a la App: [Deployment](https://frivero.com.ar/)

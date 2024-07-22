@@ -33,4 +33,4 @@
 
 ---
 
->[!Notes] Link a la App: [Deployment](https://frivero.com.ar/)
+>[!NOTES] Link a la App: [Deployment](https://frivero.com.ar/)

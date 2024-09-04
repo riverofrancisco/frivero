@@ -31,7 +31,7 @@ const actions = [
     name: "GitHub",
     linkto: "https://github.com/riverofrancisco",
   },
-/*   {
+  /*   {
     icon: <RiTwitterXFill />,
     name: "X",
     linkto: "https://twitter.com/RiveroFran_IT",
@@ -52,7 +52,7 @@ const actions = [
     icon: <DescriptionIcon />,
     name: "Resume",
     linkto:
-      "https://drive.google.com/file/d/1_bXi_ABg5Uy1yKdoZTXetTf_gQ-_LVKG/view?usp=sharing",
+      "https://drive.google.com/file/d/1IZE5_PiTIhbCTplWN5SwTuhGHwvScKax/view?usp=drive_link",
   },
 ];
 

@@ -136,18 +136,16 @@ const LandingPage: React.FC = () => {
             <Paper
               sx={{
                 py: 1,
-                px: {xs:1, md:2},
+                px: { xs: 1, md: 2 },
                 m: 1,
                 borderRadius: 2,
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center"
+                justifyContent: "center",
               }}
             >
-              <Typography  >
-                <span ref={emailRef}>
-                  franciscojose.rivero.ar@gmail.com
-                </span>
+              <Typography>
+                <span ref={emailRef}>franciscojose.rivero.ar@gmail.com</span>
               </Typography>
               <Tooltip open={open} placement="bottom-start" title="Copied">
                 <IconButton
@@ -162,11 +160,11 @@ const LandingPage: React.FC = () => {
               <IconButton
                 sx={{
                   size: "small",
-                  display:{xs: "none", sm: "flex"}
+                  display: { xs: "none", sm: "flex" },
                 }}
                 onClick={() =>
                   handleLink(
-                    "https://drive.google.com/file/d/1_bXi_ABg5Uy1yKdoZTXetTf_gQ-_LVKG/view?usp=sharing"
+                    "https://drive.google.com/file/d/1IZE5_PiTIhbCTplWN5SwTuhGHwvScKax/view?usp=drive_link"
                   )
                 }
               >
@@ -187,7 +185,6 @@ const LandingPage: React.FC = () => {
         justifyContent="center"
       >
         <Box
-          
           display="flex"
           flexDirection="column"
           alignItems="center"
@@ -197,7 +194,7 @@ const LandingPage: React.FC = () => {
           borderColor="white"
           boxShadow={2}
           sx={{
-            width:{xs:"65%", sm: "45%", md:"50%"},
+            width: { xs: "65%", sm: "45%", md: "50%" },
             "&:hover": {
               boxShadow: 6,
             },

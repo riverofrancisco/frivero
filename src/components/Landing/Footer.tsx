@@ -14,8 +14,8 @@ import Stack from "@mui/material/Stack";
 import EmailIcon from "@mui/icons-material/Email";
 import LOGO from "../Nav/LOGOnavbar.png";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
-import DescriptionIcon from '@mui/icons-material/Description';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import DescriptionIcon from "@mui/icons-material/Description";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 const actions = [
   {
@@ -42,7 +42,7 @@ const actions = [
     icon: <DescriptionIcon />,
     name: "Resume",
     linkto:
-      "https://drive.google.com/file/d/1_bXi_ABg5Uy1yKdoZTXetTf_gQ-_LVKG/view?usp=sharing",
+      "https://drive.google.com/file/d/1IZE5_PiTIhbCTplWN5SwTuhGHwvScKax/view?usp=drive_link",
   },
 ];
 
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
             href="/"
             sx={{
               mr: 2,
-              display: {xs: "none", sm: "flex" },
+              display: { xs: "none", sm: "flex" },
               fontWeight: { sm: 700 },
               letterSpacing: { sm: ".2rem" },
               color: "inherit",
@@ -93,7 +93,11 @@ const Footer: React.FC = () => {
         <Stack display="flex" flexDirection="row" alignItems="center">
           {actions.map((action) => {
             return (
-              <Tooltip key={`FooterMedia${action.name}`} title={action.name} placement="top">
+              <Tooltip
+                key={`FooterMedia${action.name}`}
+                title={action.name}
+                placement="top"
+              >
                 <IconButton
                   color="inherit"
                   key={action.name}

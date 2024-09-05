@@ -1,9 +1,6 @@
 import React from "react";
 import {
   Typography,
-  Link,
-  Button,
-  ListItemIcon,
   Tooltip,
 } from "@mui/material/";
 import { Box } from "@mui/system";
@@ -13,7 +10,6 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Stack from "@mui/material/Stack";
 import EmailIcon from "@mui/icons-material/Email";
 import LOGO from "../Nav/LOGOnavbar.png";
-import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import DescriptionIcon from "@mui/icons-material/Description";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 

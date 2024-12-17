@@ -20,7 +20,9 @@ const ProyectsList = () => {
   /* const [projects, setProjects] = useState(ProjectsEN); */
 
   const getData = async () => {
-    const data = await getProjects();
+    const data = await getProjects().then((data: any) =>
+      data.sort((a: any, b: any) => b.index - a.index)
+    );
     dispatch(projectsUpdater(data));
   };
 

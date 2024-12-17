@@ -47,8 +47,7 @@ const StyledLinearProgress = styled(LinearProgress)(({ theme }) => ({
 
 export default function NavBar() {
   //AUTH
-  const isAuth = useAppSelector((state)=> state.global.isAuth);
-
+  const isAuth = useAppSelector((state) => state.global.isAuth);
 
   const [scrolling, setScrolling] = React.useState(false);
   const [scrollProgress, setScrollProgress] = React.useState(0);
@@ -90,13 +89,13 @@ export default function NavBar() {
   const [section, setSection] = React.useState("");
   ////DARK MODE
   const [isDarkMode, setIsDarkMode] = React.useState(true);
-  const [colorNav, setColorNav] = React.useState(Colours.Celeste);
+  const [colorNav, setColorNav] = React.useState(Colours.Negro);
 
   const handleColor = (mode: boolean) => {
     if (mode) {
-      setColorNav(Colours.Negro);
-    } else {
       setColorNav(Colours.Celeste);
+    } else {
+      setColorNav(Colours.Negro);
     }
   };
 
@@ -197,7 +196,6 @@ export default function NavBar() {
                 py: !scrolling ? 1 : 0,
               }}
             >
-            
               <Toolbar
                 sx={{
                   px: { md: 5 },
@@ -206,42 +204,48 @@ export default function NavBar() {
                 }}
               >
                 <Box
-                    ml={0.5}
-                    sx={{
-                      display: { xs: "flex", sm: "flex", md: "none" },
-                      opacity: 0.8,
-                      transition: "0.3s ease", // Transición suave para el efecto de borde
-                      "&:hover": {
-                        cursor: "pointer",
-                        opacity: 1,
-                        transitionDelay: "0.02s",
-                      },
-                    }}
-                  >
-             
-                  
-                <IconButton
-                  color="inherit"
-                  aria-label="open drawer"
-                  edge="start"
-                  onClick={toggleDrawer(true)}
+                  ml={0.5}
                   sx={{
-                    mr: 2,
                     display: { xs: "flex", sm: "flex", md: "none" },
-                    flexGrow: 0,
+                    opacity: 0.8,
+                    transition: "0.3s ease", // Transición suave para el efecto de borde
+                    "&:hover": {
+                      cursor: "pointer",
+                      opacity: 1,
+                      transitionDelay: "0.02s",
+                    },
                   }}
                 >
-                  <MenuIcon />
-                </IconButton>
-             {isAuth ? <Box py={1}><LogoutButton/></Box> : <Box py={1}><LoginForm /></Box>}
+                  <IconButton
+                    color="inherit"
+                    aria-label="open drawer"
+                    edge="start"
+                    onClick={toggleDrawer(true)}
+                    sx={{
+                      mr: 2,
+                      display: { xs: "flex", sm: "flex", md: "none" },
+                      flexGrow: 0,
+                    }}
+                  >
+                    <MenuIcon />
+                  </IconButton>
+                  {isAuth ? (
+                    <Box py={1}>
+                      <LogoutButton />
+                    </Box>
+                  ) : (
+                    <Box py={1}>
+                      <LoginForm />
+                    </Box>
+                  )}
                 </Box>
-                
+
                 <Box
                   sx={{
                     flexGrow: 1,
                     display: { xs: "none", md: "flex" },
                     opacity: 0.8,
-                    transition: "0.3s ease", // Transición suave para el efecto de borde
+                    transition: "0.3s ease", 
                     "&:hover": {
                       cursor: "pointer",
                       opacity: 1,
@@ -258,12 +262,7 @@ export default function NavBar() {
                       display: "flex",
                     }}
                   >
-                    <img
-                      width={16}
-                      src={LOGO}
-                      alt="logo"
-                      
-                    />
+                    <img width={16} src={LOGO} alt="logo" />
                   </Box>
                 </Box>
                 <Box sx={{ display: { xs: "none", md: "flex" } }}>
@@ -278,7 +277,7 @@ export default function NavBar() {
                           opacity: 0.7,
                           borderBottom: "0px solid transparent",
                           transition:
-                            "opacity 0.3s ease-in, border-bottom 0.3s ease-out", // Transición suave para el efecto de borde
+                            "opacity 0.3s ease-in, border-bottom 0.3s ease-out", 
                           "&:hover": {
                             opacity: 1,
                             borderBottom: "1px solid",
@@ -292,7 +291,15 @@ export default function NavBar() {
                       </Box>{" "}
                     </Box>
                   ))}
-                  {isAuth ? <Box py={0.5}><LogoutButton/></Box> : <Box py={0.5}><LoginForm /></Box>}
+                  {isAuth ? (
+                    <Box py={0.5}>
+                      <LogoutButton />
+                    </Box>
+                  ) : (
+                    <Box py={0.5}>
+                      <LoginForm />
+                    </Box>
+                  )}
                 </Box>
                 <Box display="flex">
                   <IconButton
@@ -305,9 +312,9 @@ export default function NavBar() {
                     }}
                   >
                     {isDarkMode ? (
-                      <LightModeRoundedIcon />
-                    ) : (
                       <DarkModeRoundedIcon />
+                    ) : (
+                      <LightModeRoundedIcon />
                     )}
                   </IconButton>
                   <LanguageButton />

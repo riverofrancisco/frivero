@@ -25,7 +25,7 @@ interface InitialState {
 const initialState: InitialState = {
 visits: 0,
 status: "ok",
-mode: "light",
+mode: "dark",
 language: "en",
 projects: {
     selected: emptyProject,

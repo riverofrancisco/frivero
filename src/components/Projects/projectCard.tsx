@@ -50,16 +50,17 @@ const ProyectCard = ({ project, currentLanguage, refresh }: Props) => {
       sx={{
         width: { xs: "95%", sm: "47%", md: "40%", lg: "30%" },
         bgcolor: "none",
-        borderRadius: 5,
+        borderRadius: 3,
         p: 0.5,
         transition: "transform 0.3s ease-in-out",
         "&:hover": {
           cursor: "pointer",
-          transform: "scale(1.03)",
-          transitionDelay: "0.10s",
+          transform: "scale(1.02)",
+          transitionDelay: "0.05s",
         },
         boxShadow: "0px 0px 3px rgba(0, 0, 0, 0.5)",
         mb: { xs: 5, sm: 1 },
+        my: { xs: 1}
       }}
     >
       <Grid item xs={12} >
@@ -68,7 +69,7 @@ const ProyectCard = ({ project, currentLanguage, refresh }: Props) => {
             src={project.image}
             alt={project.name.en}
             style={{
-              borderRadius: 15,
+              borderRadius: 10,
               width: "100%",
             }}
           />

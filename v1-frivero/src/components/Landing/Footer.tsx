@@ -1,50 +1,47 @@
-import React from "react";
-import {
-  Typography,
-  Tooltip,
-} from "@mui/material/";
-import { Box } from "@mui/system";
-import IconButton from "@mui/material/IconButton";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import Stack from "@mui/material/Stack";
-import EmailIcon from "@mui/icons-material/Email";
-import LOGO from "../Nav/LOGOnavbar.png";
-import DescriptionIcon from "@mui/icons-material/Description";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import React from 'react';
+import { Typography, Tooltip } from '@mui/material/';
+import { Box } from '@mui/system';
+import IconButton from '@mui/material/IconButton';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Stack from '@mui/material/Stack';
+import EmailIcon from '@mui/icons-material/Email';
+import LOGO from '../Nav/LOGOnavbar.png';
+import DescriptionIcon from '@mui/icons-material/Description';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const actions = [
   {
     icon: <LinkedInIcon />,
-    name: "LinkedIn",
-    linkto: "https://www.linkedin.com/in/rivero-francisco/",
+    name: 'LinkedIn',
+    linkto: 'https://www.linkedin.com/in/rivero-francisco/',
   },
   {
     icon: <GitHubIcon />,
-    name: "GitHub",
-    linkto: "https://github.com/riverofrancisco",
+    name: 'GitHub',
+    linkto: 'https://github.com/riverofrancisco',
   },
   {
     icon: <WhatsAppIcon />,
-    name: "WhatsApp",
-    linkto: "https://wa.me/34644051404",
+    name: 'WhatsApp',
+    linkto: 'https://wa.me/34644051404',
   },
   {
     icon: <EmailIcon />,
-    name: "Email",
-    linkto: "mailto:franciscojose.rivero.ar@gmail.com",
+    name: 'Email',
+    linkto: 'mailto:info@frivero.com.ar',
   },
   {
     icon: <DescriptionIcon />,
-    name: "Resume",
+    name: 'Resume',
     linkto:
-      "https://drive.google.com/file/d/1IZE5_PiTIhbCTplWN5SwTuhGHwvScKax/view?usp=drive_link",
+      'https://drive.google.com/file/d/1IZE5_PiTIhbCTplWN5SwTuhGHwvScKax/view?usp=drive_link',
   },
 ];
 
 const Footer: React.FC = () => {
   const handleLink = (link: string) => {
-    if (link) window.open(link, "_blank");
+    if (link) window.open(link, '_blank');
   };
 
   return (
@@ -67,11 +64,11 @@ const Footer: React.FC = () => {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: "none", sm: "flex" },
+              display: { xs: 'none', sm: 'flex' },
               fontWeight: { sm: 700 },
-              letterSpacing: { sm: ".2rem" },
-              color: "inherit",
-              textDecoration: "none",
+              letterSpacing: { sm: '.2rem' },
+              color: 'inherit',
+              textDecoration: 'none',
             }}
           >
             Francisco Rivero
@@ -79,7 +76,7 @@ const Footer: React.FC = () => {
           <Box
             ml={0.5}
             sx={{
-              display: "flex",
+              display: 'flex',
             }}
           >
             <img width={16} src={LOGO} alt="logo" />
@@ -99,13 +96,13 @@ const Footer: React.FC = () => {
                   key={action.name}
                   sx={{
                     opacity: 0.5,
-                    borderBottom: "0px solid transparent",
-                    transition: "opacity 0.3s ease-in", // Transición suave para el efecto de borde
-                    "&:hover": {
+                    borderBottom: '0px solid transparent',
+                    transition: 'opacity 0.3s ease-in', // Transición suave para el efecto de borde
+                    '&:hover': {
                       opacity: 1,
 
-                      transitionDelay: "0.05s",
-                      cursor: "pointer",
+                      transitionDelay: '0.05s',
+                      cursor: 'pointer',
                     },
                   }}
                   onClick={() => handleLink(action.linkto)}

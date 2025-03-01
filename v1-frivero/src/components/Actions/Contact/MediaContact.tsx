@@ -45,7 +45,7 @@ const actions = [
   {
     icon: <EmailIcon />,
     name: "Email",
-    linkto: "mailto:franciscojose.rivero.ar@gmail.com",
+    linkto: "mailto:info@frivero.com.ar",
   },
 
   {

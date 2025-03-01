@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Typography,
   Box,
@@ -8,20 +8,20 @@ import {
   Avatar,
   IconButton,
   Tooltip,
-} from "@mui/material/";
+} from '@mui/material/';
 
-import { useAppDispatch, useAppSelector } from "../../hooks/hooksRedux";
-import { ProfileIMG } from "../../data/data";
-import MediaContact from "../Actions/Contact/MediaContact";
-import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
-import DescriptionIcon from "@mui/icons-material/Description";
+import { useAppDispatch, useAppSelector } from '../../hooks/hooksRedux';
+import { ProfileIMG } from '../../data/data';
+import MediaContact from '../Actions/Contact/MediaContact';
+import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
+import DescriptionIcon from '@mui/icons-material/Description';
 
 const LandingPage: React.FC = () => {
   const dispatch = useAppDispatch();
   const status = useAppSelector((state) => state.global.visits);
   const currentLanguage = useAppSelector((state) => state.global.language);
   const mode = useAppSelector((state) => state.global.mode);
-  const [id, setId] = useState("Home");
+  const [id, setId] = useState('Home');
 
   //copyEmail
   const [open, setOpen] = React.useState(false);
@@ -34,7 +34,7 @@ const LandingPage: React.FC = () => {
       range.selectNode(emailRef.current);
       window.getSelection()?.removeAllRanges();
       window.getSelection()?.addRange(range);
-      document.execCommand("copy");
+      document.execCommand('copy');
       window.getSelection()?.removeAllRanges();
     }
     setOpen(true);
@@ -45,19 +45,19 @@ const LandingPage: React.FC = () => {
   };
   //linkto
   const handleLink = (link: string) => {
-    if (link) window.open(link, "_blank");
+    if (link) window.open(link, '_blank');
   };
 
   const [isVisible, setIsVisible] = useState(true);
-  const [opacity, setOpacity] = useState("100%");
-  const [idLimit, setIdLimit] = useState("Contact");
+  const [opacity, setOpacity] = useState('100%');
+  const [idLimit, setIdLimit] = useState('Contact');
   const handleLimit = () => {
-    if (currentLanguage === "en") {
-      setId("Home");
-      setIdLimit("Contact");
-    } else if (currentLanguage === "es") {
-      setId("Inicio");
-      setIdLimit("Contacto");
+    if (currentLanguage === 'en') {
+      setId('Home');
+      setIdLimit('Contact');
+    } else if (currentLanguage === 'es') {
+      setId('Inicio');
+      setIdLimit('Contacto');
     }
   };
 
@@ -71,7 +71,7 @@ const LandingPage: React.FC = () => {
 
       const diference = hidePosition - scrollPosition;
       if (diference > 200) {
-        setOpacity("100%");
+        setOpacity('100%');
       } else {
         const newOpacity = (diference * 100) / 200;
         setOpacity(`${newOpacity}%`);
@@ -81,14 +81,14 @@ const LandingPage: React.FC = () => {
 
   useEffect(() => {
     handleLimit();
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   });
 
   return (
-    <Grid container direction="row" sx={{ height: "100vh", px: "10%" }} id={id}>
+    <Grid container direction="row" sx={{ height: '100vh', px: '10%' }} id={id}>
       <Grid
         item
         xs={12}
@@ -116,21 +116,21 @@ const LandingPage: React.FC = () => {
               component="a"
               href="/"
               sx={{
-                display: { md: "flex" },
+                display: { md: 'flex' },
                 pt: { xs: 15, sm: 0 },
                 fontWeight: 700,
-                letterSpacing: { sm: ".2rem" },
-                color: "inherit",
-                textDecoration: "none",
+                letterSpacing: { sm: '.2rem' },
+                color: 'inherit',
+                textDecoration: 'none',
               }}
             >
               Francisco Rivero
             </Typography>
 
             <Typography variant="subtitle1">
-              {currentLanguage === "en"
-                ? "FullStack Web Developer"
-                : "Desarrollador Web Full Stack"}
+              {currentLanguage === 'en'
+                ? 'FullStack Web Developer'
+                : 'Desarrollador Web Full Stack'}
             </Typography>
 
             <Paper
@@ -139,18 +139,18 @@ const LandingPage: React.FC = () => {
                 px: { xs: 1, md: 2 },
                 m: 1,
                 borderRadius: 2,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
             >
               <Typography>
-                <span ref={emailRef}>franciscojose.rivero.ar@gmail.com</span>
+                <span ref={emailRef}>info@frivero.com.ar</span>
               </Typography>
               <Tooltip open={open} placement="bottom-start" title="Copied">
                 <IconButton
                   sx={{
-                    size: "small",
+                    size: 'small',
                   }}
                   onClick={handleCopyClick}
                 >
@@ -159,12 +159,12 @@ const LandingPage: React.FC = () => {
               </Tooltip>
               <IconButton
                 sx={{
-                  size: "small",
-                  display: { xs: "none", sm: "flex" },
+                  size: 'small',
+                  display: { xs: 'none', sm: 'flex' },
                 }}
                 onClick={() =>
                   handleLink(
-                    "https://drive.google.com/file/d/1IZE5_PiTIhbCTplWN5SwTuhGHwvScKax/view?usp=drive_link"
+                    'https://drive.google.com/file/d/1IZE5_PiTIhbCTplWN5SwTuhGHwvScKax/view?usp=drive_link'
                   )
                 }
               >
@@ -194,8 +194,8 @@ const LandingPage: React.FC = () => {
           borderColor="white"
           boxShadow={2}
           sx={{
-            width: { xs: "65%", sm: "45%", md: "50%" },
-            "&:hover": {
+            width: { xs: '65%', sm: '45%', md: '50%' },
+            '&:hover': {
               boxShadow: 6,
             },
           }}
@@ -204,25 +204,25 @@ const LandingPage: React.FC = () => {
             alt="FR"
             src={ProfileIMG}
             sx={{
-              width: "100%",
-              height: "100%",
-              transition: "transform 0.3s ease-in-out",
-              "&:hover": {
+              width: '100%',
+              height: '100%',
+              transition: 'transform 0.3s ease-in-out',
+              '&:hover': {
                 boxShadow: 3,
-                transform: "scale(1.05)",
-                transitionDelay: "0.05s",
+                transform: 'scale(1.05)',
+                transitionDelay: '0.05s',
               },
             }}
           />
         </Box>
         <Box
           sx={{
-            display: isVisible ? "block" : "none",
+            display: isVisible ? 'block' : 'none',
             opacity: opacity,
-            position: "fixed",
-            top: "50%",
-            right: { xs: 0, sm: "5%", md: "10%" },
-            transform: "translateY(-50%)",
+            position: 'fixed',
+            top: '50%',
+            right: { xs: 0, sm: '5%', md: '10%' },
+            transform: 'translateY(-50%)',
             zIndex: 1000,
           }}
         >
